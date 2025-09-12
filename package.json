@@ -1,15 +1,17 @@
 {
-  "name": "fastmcp",
+  "name": "firecrawl-fastmcp",
   "version": "1.0.0",
   "main": "dist/FastMCP.js",
   "scripts": {
     "build": "tsup",
     "lint": "prettier --check . && eslint . && tsc --noEmit && jsr publish --dry-run",
     "test": "vitest run",
-    "format": "prettier --write . && eslint --fix ."
+    "format": "prettier --write . && eslint --fix .",
+    "publish": "npm run build && npm publish",
+    "publish-beta": "npm run build && npm publish --tag beta"
   },
   "bin": {
-    "fastmcp": "dist/bin/fastmcp.js"
+    "firecrawl-fastmcp": "dist/bin/fastmcp.js"
   },
   "keywords": [
     "MCP",
@@ -22,7 +24,7 @@
   "module": "dist/FastMCP.js",
   "types": "dist/FastMCP.d.ts",
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.17.2",
+    "@modelcontextprotocol/sdk": "^1.18.0",
     "@standard-schema/spec": "^1.0.0",
     "execa": "^9.6.0",
     "file-type": "^21.0.0",
